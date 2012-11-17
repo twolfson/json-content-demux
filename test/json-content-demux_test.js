@@ -42,8 +42,18 @@ exports['json-content-demux'] = {
         test.strictEqual(expectedContent, demuxObj.content, 'Actual content and expected content are not equal');
 
     test.done();
-  // },
-  // 'jsonless': function (test) {
+  },
+  'jsonless': function (test) {
+    test.expect(1);
 
+    // JSON-less content
+    var muxContent = fs.readFileSync(testFilesDir + '/jsonless.md', 'utf8');
+      // when demuxed
+      var demuxObj = jsonContentDemux(muxContent);
+        // has the expected content
+        var expectedContent = fs.readFileSync(expectedFilesDir + '/jsonless.content.md', 'utf8');
+        test.strictEqual(expectedContent, demuxObj.content, 'Actual content and expected content are not equal');
+
+    test.done();
   }
 };
