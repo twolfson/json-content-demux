@@ -1,5 +1,7 @@
-var json_content_demux = require('../lib/json-content-demux.js'),
-    fs = require('fs');
+var jsonContentDemux = require('../lib/json-content-demux.js'),
+    fs = require('fs'),
+    testFilesDir = __dirname + '/test_files',
+    expectedFilesDir = __dirname + '/expected_files';
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -26,10 +28,22 @@ exports['json-content-demux'] = {
     // setup here
     done();
   },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(json_content_demux.awesome(), 'awesome', 'should be awesome.');
+  'simple': function(test) {
+    test.expect(2);
+
+    // Simple content
+    var muxContent = fs.readFileSync(testFilesDir + '/simple.md', 'utf8');
+      // when demuxed
+      var demuxObj = jsonContentDemux(muxContent);
+        // has the expected JSON and content
+        var expectedJSON = require(expectedFilesDir + '/simple.json'),
+            expectedContent = fs.readFileSync(expectedFilesDir + '/simple.content.md', 'utf8');
+        test.deepEqual(expectedJSON, demuxObj.json, 'Actual JSON and expected JSON are not equal');
+        test.strictEqual(expectedContent, demuxObj.content, 'Actual content and expected content are not equal');
+
     test.done();
+  // },
+  // 'jsonless': function (test) {
+
   }
 };
