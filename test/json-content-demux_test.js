@@ -1,4 +1,5 @@
-var json_content_demux = require('../lib/json-content-demux.js');
+var json_content_demux = require('../lib/json-content-demux.js'),
+    fs = require('fs');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -20,7 +21,7 @@ var json_content_demux = require('../lib/json-content-demux.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
+exports['json-content-demux'] = {
   setUp: function(done) {
     // setup here
     done();
