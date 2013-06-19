@@ -1,4 +1,4 @@
-# json-content-demux
+# json-content-demux [![Donate on Gittip](http://badgr.co/gittip/twolfson.png)](https://www.gittip.com/twolfson/)
 
 Break up JSON from content in a JSON-first file
 
