@@ -31,9 +31,6 @@ jsonContentDemux is currently a single function module with a single purpose.
 ```js
 /**
  * @param {String} muxStr Muxed content to break up
- * TODO: options is not yet used
- * @param {Object} [options] Options to break up by
- * @param {String|RegExp} [options.delimiter=/\n\r?\n\r?/] Delimiter between JSON and content
  * @returns {Object} retObj
  * @returns {Object} retObj.json JSON found at the head of the content
  * @returns {String} retObj.content Content found in the body
