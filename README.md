@@ -40,7 +40,7 @@ jsonContentDemux is currently a single function module with a single purpose.
 At some point, the scope may increasee to encapsulate any markup language as well as multiple sets of delimited items.
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via `npm run lint` and test via `npm test`.
 
 ## License
 Copyright (c) 2012 Todd Wolfson
