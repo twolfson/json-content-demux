@@ -26,10 +26,11 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "nodeunit test"
   },
   "devDependencies": {
-    "grunt": "~0.3.12"
+    "grunt": "~0.3.12",
+    "nodeunit": "~0.11.3"
   },
   "keywords": [
     "json",
